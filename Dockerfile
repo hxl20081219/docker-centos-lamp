@@ -1,0 +1,1 @@
+FROM  registry.cn-hangzhou.aliyuncs.com/shtf/centos7:php74

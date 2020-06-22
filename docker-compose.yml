@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  centos:
+    build: 
+      context: .
+    container_name: 'centos'
+    restart: 'always'
+    links:
+      - redis
+      - mysql
+    ports:
+      - "80:80"
+      - "81:81"
+    volumes: 
+      - D:\www:/data/www
+      - ./www:/var/www/html
+      - ./config/httpd/conf:/etc/httpd/conf
+      - ./config/httpd/conf.d:/etc/httpd/conf.d
+      - ./config/php/php.ini:/etc/php.ini
+      - ./logs/httpd/:/var/log/httpd
+    environment:
+      PMA_PORT: 80
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports:
+        - 6379:6379
+    volumes:
+        - ./config/redis/redis.conf:/etc/redis/redis.conf
+    command: redis-server /etc/redis/redis.conf
+  mysql:
+    image: mysql:5.7
+    container_name: 'mysql'
+    restart: 'always'
+    ports:
+        - "3306:3306"
+    volumes: 
+        - ./data/mysql:/var/lib/mysql
+        - ./logs/mysql:/var/log/mysql
+        - ./config/mysql/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+        - ./config/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+        - ./config/mysql/mysqldump.cnf:/etc/mysql/conf.d/mysqldump.cnf
+    environment:
+        MYSQL_ROOT_PASSWORD: 123456

@@ -9,9 +9,20 @@ A basic LAMP environment built using Docker Compose. It consists of the followin
 - Redis
 
 # Installation
+- install docker,docker-compose for centos
+```
+yum install -y docker
+yum install -y yum install epel-release
+yum install -y docker-compose
+```
+- install docker desktop for windows
+```
+https://www.docker.com/get-started
+```
 - Clone this repository on your local computer
 - Run the docker-compose up -d
 ```
+
 git clone https://github.com/hxl20081219/docker-centos-lamp.git
 cd centos-lamp/
 docker-compose up -d

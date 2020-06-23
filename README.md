@@ -23,7 +23,7 @@ https://www.docker.com/get-started
 - Run the docker-compose up -d
 ```
 git clone https://github.com/hxl20081219/docker-centos-lamp.git
-cd centos-lamp/
+cd docker-centos-lamp/
 docker-compose up -d
 // visit localhost
 ```

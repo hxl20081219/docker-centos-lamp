@@ -11,9 +11,7 @@ services:
       - mysql
     ports:
       - "80:80"
-      - "81:81"
     volumes: 
-      - D:\www:/data/www
       - ./www:/var/www/html
       - ./config/httpd/conf:/etc/httpd/conf
       - ./config/httpd/conf.d:/etc/httpd/conf.d

@@ -22,7 +22,6 @@ https://www.docker.com/get-started
 - Clone this repository on your local computer
 - Run the docker-compose up -d
 ```
-
 git clone https://github.com/hxl20081219/docker-centos-lamp.git
 cd centos-lamp/
 docker-compose up -d
@@ -53,7 +52,6 @@ PHP_INI Define your custom php.ini modification to meet your requirments.
 
 > If you want to install more extension, just update .Dockerfile. You can also generate a PR and we will merge if it seems good for general purpose. You have to rebuild the docker image by running docker-compose build and restart the docker containers.
 
-phpMyAdmin
 ---
 
 ## apache
